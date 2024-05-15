@@ -229,9 +229,9 @@ static inline void volk_32u_byteswap_neonv8(uint32_t* intsToSwap, unsigned int n
 #endif /* LV_HAVE_NEONV8 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32u_byteswap_generic(uint32_t* intsToSwap,
+static inline void volk_32u_byteswap_e2k(uint32_t* intsToSwap,
                                              unsigned int num_points)
 {
     uint32_t* inputPtr = intsToSwap;
@@ -246,7 +246,7 @@ static inline void volk_32u_byteswap_generic(uint32_t* intsToSwap,
         inputPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32u_byteswap_u_H */

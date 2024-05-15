@@ -265,8 +265,8 @@ static inline void volk_32fc_x2_square_dist_32f_neon(float* target,
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32fc_x2_square_dist_32f_generic(float* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_32fc_x2_square_dist_32f_e2k(float* target,
                                                         lv_32fc_t* src0,
                                                         lv_32fc_t* points,
                                                         unsigned int num_points)
@@ -286,7 +286,7 @@ static inline void volk_32fc_x2_square_dist_32f_generic(float* target,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_32fc_x2_square_dist_32f_a_H*/

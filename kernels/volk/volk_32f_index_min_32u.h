@@ -302,10 +302,10 @@ volk_32f_index_min_32u_neon(uint32_t* target, const float* source, uint32_t num_
 #endif /*LV_HAVE_NEON*/
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_index_min_32u_generic(uint32_t* target, const float* source, uint32_t num_points)
+volk_32f_index_min_32u_e2k(uint32_t* target, const float* source, uint32_t num_points)
 {
     float min = source[0];
     uint32_t index = 0;
@@ -319,7 +319,7 @@ volk_32f_index_min_32u_generic(uint32_t* target, const float* source, uint32_t n
     target[0] = index;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_32f_index_min_32u_a_H*/

@@ -44,10 +44,10 @@
 #include <math.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32fc_s32f_power_spectrum_32f_generic(float* logPowerOutput,
+volk_32fc_s32f_power_spectrum_32f_e2k(float* logPowerOutput,
                                           const lv_32fc_t* complexFFTInput,
                                           const float normalizationFactor,
                                           unsigned int num_points)
@@ -62,7 +62,7 @@ volk_32fc_s32f_power_spectrum_32f_generic(float* logPowerOutput,
     // 10 * log10 (v^2 / (2 * 75.0 * .001)) = 10 * log10( v^2 * 15)
 
     /*
-     * For generic reference, the code below is a volk-optimized
+     * For e2k reference, the code below is a volk-optimized
      * approach that also leverages a faster log2 calculation
      * to calculate the log10:
      * n*log10(x) = n*log2(x)/log2(10) = (n/log2(10)) * log2(x)
@@ -88,7 +88,7 @@ volk_32fc_s32f_power_spectrum_32f_generic(float* logPowerOutput,
     volk_32f_s32f_multiply_32f(
         logPowerOutput, logPowerOutput, volk_log2to10factor, num_points);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>

@@ -47,9 +47,9 @@ static inline void encodepolar_single_stage(unsigned char* frame_ptr,
     }
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_8u_x2_encodeframepolar_8u_generic(unsigned char* frame,
+static inline void volk_8u_x2_encodeframepolar_8u_e2k(unsigned char* frame,
                                                           unsigned char* temp,
                                                           unsigned int frame_size)
 {
@@ -68,7 +68,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_generic(unsigned char* frame,
         --stage;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_SSSE3
 #include <tmmintrin.h>
@@ -78,7 +78,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_u_ssse3(unsigned char* frame,
                                                           unsigned int frame_size)
 {
     if (frame_size < 16) {
-        volk_8u_x2_encodeframepolar_8u_generic(frame, temp, frame_size);
+        volk_8u_x2_encodeframepolar_8u_e2k(frame, temp, frame_size);
         return;
     }
 
@@ -160,7 +160,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_u_ssse3(unsigned char* frame,
     }
 
     // This last part requires at least 16-bit frames.
-    // Smaller frames are useless for SIMD optimization anyways. Just choose GENERIC!
+    // Smaller frames are useless for SIMD optimization anyways. Just choose E2K!
 
     // reset pointers to correct positions.
     frame_ptr = frame;
@@ -262,7 +262,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_u_avx2(unsigned char* frame,
                                                          unsigned int frame_size)
 {
     if (frame_size < 32) {
-        volk_8u_x2_encodeframepolar_8u_generic(frame, temp, frame_size);
+        volk_8u_x2_encodeframepolar_8u_e2k(frame, temp, frame_size);
         return;
     }
 
@@ -438,7 +438,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_u_avx2(unsigned char* frame,
     }
 
     // This last part requires at least 32-bit frames.
-    // Smaller frames are useless for SIMD optimization anyways. Just choose GENERIC!
+    // Smaller frames are useless for SIMD optimization anyways. Just choose E2K!
 
     // reset pointers to correct positions.
     frame_ptr = frame;
@@ -623,7 +623,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_a_ssse3(unsigned char* frame,
                                                           unsigned int frame_size)
 {
     if (frame_size < 16) {
-        volk_8u_x2_encodeframepolar_8u_generic(frame, temp, frame_size);
+        volk_8u_x2_encodeframepolar_8u_e2k(frame, temp, frame_size);
         return;
     }
 
@@ -705,7 +705,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_a_ssse3(unsigned char* frame,
     }
 
     // This last part requires at least 16-bit frames.
-    // Smaller frames are useless for SIMD optimization anyways. Just choose GENERIC!
+    // Smaller frames are useless for SIMD optimization anyways. Just choose E2K!
 
     // reset pointers to correct positions.
     frame_ptr = frame;
@@ -806,7 +806,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_a_avx2(unsigned char* frame,
                                                          unsigned int frame_size)
 {
     if (frame_size < 32) {
-        volk_8u_x2_encodeframepolar_8u_generic(frame, temp, frame_size);
+        volk_8u_x2_encodeframepolar_8u_e2k(frame, temp, frame_size);
         return;
     }
 
@@ -982,7 +982,7 @@ static inline void volk_8u_x2_encodeframepolar_8u_a_avx2(unsigned char* frame,
     }
 
     // This last part requires at least 32-bit frames.
-    // Smaller frames are useless for SIMD optimization anyways. Just choose GENERIC!
+    // Smaller frames are useless for SIMD optimization anyways. Just choose E2K!
 
     // reset pointers to correct positions.
     frame_ptr = frame;

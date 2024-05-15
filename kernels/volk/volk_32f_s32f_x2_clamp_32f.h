@@ -44,8 +44,8 @@
 #ifndef INCLUDED_volk_32fc_s32f_x2_clamp_32f_a_H
 #define INCLUDED_volk_32fc_s32f_x2_clamp_32f_a_H
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_s32f_x2_clamp_32f_generic(float* out,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_s32f_x2_clamp_32f_e2k(float* out,
                                                       const float* in,
                                                       const float min,
                                                       const float max,
@@ -64,7 +64,7 @@ static inline void volk_32f_s32f_x2_clamp_32f_generic(float* out,
         out++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #if LV_HAVE_AVX2
 #include <immintrin.h>
@@ -91,7 +91,7 @@ static inline void volk_32f_s32f_x2_clamp_32f_a_avx2(float* out,
     }
 
     number = eighth_points * 8;
-    volk_32f_s32f_x2_clamp_32f_generic(out, in, min, max, num_points - number);
+    volk_32f_s32f_x2_clamp_32f_e2k(out, in, min, max, num_points - number);
 }
 #endif /* LV_HAVE_AVX2 */
 
@@ -120,7 +120,7 @@ static inline void volk_32f_s32f_x2_clamp_32f_a_sse4_1(float* out,
     }
 
     number = quarter_points * 4;
-    volk_32f_s32f_x2_clamp_32f_generic(out, in, min, max, num_points - number);
+    volk_32f_s32f_x2_clamp_32f_e2k(out, in, min, max, num_points - number);
 }
 #endif /* LV_HAVE_SSE4_1 */
 
@@ -154,7 +154,7 @@ static inline void volk_32f_s32f_x2_clamp_32f_u_avx2(float* out,
     }
 
     number = eighth_points * 8;
-    volk_32f_s32f_x2_clamp_32f_generic(out, in, min, max, num_points - number);
+    volk_32f_s32f_x2_clamp_32f_e2k(out, in, min, max, num_points - number);
 }
 #endif /* LV_HAVE_AVX2 */
 
@@ -183,7 +183,7 @@ static inline void volk_32f_s32f_x2_clamp_32f_u_sse4_1(float* out,
     }
 
     number = quarter_points * 4;
-    volk_32f_s32f_x2_clamp_32f_generic(out, in, min, max, num_points - number);
+    volk_32f_s32f_x2_clamp_32f_e2k(out, in, min, max, num_points - number);
 }
 #endif /* LV_HAVE_SSE4_1 */
 

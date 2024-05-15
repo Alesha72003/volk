@@ -130,9 +130,9 @@ static inline void volk_32fc_conjugate_32fc_u_sse3(lv_32fc_t* cVector,
 }
 #endif /* LV_HAVE_SSE3 */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_conjugate_32fc_generic(lv_32fc_t* cVector,
+static inline void volk_32fc_conjugate_32fc_e2k(lv_32fc_t* cVector,
                                                     const lv_32fc_t* aVector,
                                                     unsigned int num_points)
 {
@@ -144,7 +144,7 @@ static inline void volk_32fc_conjugate_32fc_generic(lv_32fc_t* cVector,
         *cPtr++ = lv_conj(*aPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32fc_conjugate_32fc_u_H */

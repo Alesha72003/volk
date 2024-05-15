@@ -44,7 +44,7 @@ generate_error_free_input_vector(float* llrs, unsigned char* u, const int frame_
 {
     memset(u, 0, frame_size);
     unsigned char* target = u + frame_size;
-    volk_8u_x2_encodeframepolar_8u_generic(target, u + 2 * frame_size, frame_size);
+    volk_8u_x2_encodeframepolar_8u_e2k(target, u + 2 * frame_size, frame_size);
     float* ft = llrs;
     int i;
     for (i = 0; i < frame_size; i++) {
@@ -75,8 +75,8 @@ static inline int maximum_frame_size(const int elements)
     return next_lower_power_of_two(frame_size / frame_exp);
 }
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_8u_polarbutterflypuppet_32f_generic(float* llrs,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_8u_polarbutterflypuppet_32f_e2k(float* llrs,
                                                                 const float* input,
                                                                 unsigned char* u,
                                                                 const int elements)
@@ -96,13 +96,13 @@ static inline void volk_32f_8u_polarbutterflypuppet_32f_generic(float* llrs,
 
     unsigned int u_num = 0;
     for (; u_num < frame_size; u_num++) {
-        volk_32f_8u_polarbutterfly_32f_generic(llrs, u, frame_exp, 0, u_num, u_num);
+        volk_32f_8u_polarbutterfly_32f_e2k(llrs, u, frame_exp, 0, u_num, u_num);
         u[u_num] = llrs[u_num] > 0 ? 0 : 1;
     }
 
     clean_up_intermediate_values(llrs, u, frame_size, elements);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_AVX
 static inline void volk_32f_8u_polarbutterflypuppet_32f_u_avx(float* llrs,

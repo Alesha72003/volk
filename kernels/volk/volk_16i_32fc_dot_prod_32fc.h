@@ -49,9 +49,9 @@
 #include <volk/volk_common.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16i_32fc_dot_prod_32fc_generic(lv_32fc_t* result,
+static inline void volk_16i_32fc_dot_prod_32fc_e2k(lv_32fc_t* result,
                                                        const short* input,
                                                        const lv_32fc_t* taps,
                                                        unsigned int num_points)
@@ -81,7 +81,7 @@ static inline void volk_16i_32fc_dot_prod_32fc_generic(lv_32fc_t* result,
     *result = acc0 + acc1 + acc2 + acc3;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>

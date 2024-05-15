@@ -53,9 +53,9 @@
 #include <stdio.h>
 #include <volk/volk_common.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_32f_dot_prod_32fc_generic(lv_32fc_t* result,
+static inline void volk_32fc_32f_dot_prod_32fc_e2k(lv_32fc_t* result,
                                                        const lv_32fc_t* input,
                                                        const float* taps,
                                                        unsigned int num_points)
@@ -75,7 +75,7 @@ static inline void volk_32fc_32f_dot_prod_32fc_generic(lv_32fc_t* result,
     *result = returnValue;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #if LV_HAVE_AVX2 && LV_HAVE_FMA
 

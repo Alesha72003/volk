@@ -162,9 +162,9 @@ volk_32f_invsqrt_32f_neon(float* cVector, const float* aVector, unsigned int num
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_invsqrt_32f_generic(float* cVector,
+static inline void volk_32f_invsqrt_32f_e2k(float* cVector,
                                                 const float* aVector,
                                                 unsigned int num_points)
 {
@@ -175,7 +175,7 @@ static inline void volk_32f_invsqrt_32f_generic(float* cVector,
         *cPtr++ = Q_rsqrt(*aPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_AVX
 #include <immintrin.h>

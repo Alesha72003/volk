@@ -136,9 +136,9 @@ static inline void volk_32fc_deinterleave_real_64f_a_sse2(double* iBuffer,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_deinterleave_real_64f_generic(double* iBuffer,
+static inline void volk_32fc_deinterleave_real_64f_e2k(double* iBuffer,
                                                            const lv_32fc_t* complexVector,
                                                            unsigned int num_points)
 {
@@ -150,7 +150,7 @@ static inline void volk_32fc_deinterleave_real_64f_generic(double* iBuffer,
         complexVectorPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEONV8
 #include <arm_neon.h>

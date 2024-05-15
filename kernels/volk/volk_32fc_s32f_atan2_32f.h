@@ -63,8 +63,8 @@
 
 #include <math.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32fc_s32f_atan2_32f_generic(float* outputVector,
+#ifdef LV_HAVE_E2K
+static inline void volk_32fc_s32f_atan2_32f_e2k(float* outputVector,
                                                     const lv_32fc_t* inputVector,
                                                     const float normalizeFactor,
                                                     unsigned int num_points)
@@ -79,9 +79,9 @@ static inline void volk_32fc_s32f_atan2_32f_generic(float* outputVector,
         *outPtr++ = atan2f(imag, real) * invNormalizeFactor;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 #include <volk/volk_common.h>
 static inline void volk_32fc_s32f_atan2_32f_polynomial(float* outputVector,
                                                        const lv_32fc_t* inputVector,
@@ -98,7 +98,7 @@ static inline void volk_32fc_s32f_atan2_32f_polynomial(float* outputVector,
         *outPtr++ = volk_atan2(y, x) * invNormalizeFactor;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #if LV_HAVE_AVX2 && LV_HAVE_FMA
 #include <immintrin.h>

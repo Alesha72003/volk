@@ -161,8 +161,8 @@ static inline void volk_16i_permute_and_scalar_add_a_sse2(short* target,
 #endif /*LV_HAVE_SSE*/
 
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_16i_permute_and_scalar_add_generic(short* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_16i_permute_and_scalar_add_e2k(short* target,
                                                            short* src0,
                                                            short* permute_indexes,
                                                            short* cntl0,
@@ -185,6 +185,6 @@ static inline void volk_16i_permute_and_scalar_add_generic(short* target,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #endif /*INCLUDED_volk_16i_permute_and_scalar_add_a_H*/

@@ -81,9 +81,9 @@ static inline void volk_16ic_convert_32fc_a_avx2(lv_32fc_t* outputVector,
 
 #endif /* LV_HAVE_AVX2 */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16ic_convert_32fc_generic(lv_32fc_t* outputVector,
+static inline void volk_16ic_convert_32fc_e2k(lv_32fc_t* outputVector,
                                                   const lv_16sc_t* inputVector,
                                                   unsigned int num_points)
 {
@@ -94,7 +94,7 @@ static inline void volk_16ic_convert_32fc_generic(lv_32fc_t* outputVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_SSE2

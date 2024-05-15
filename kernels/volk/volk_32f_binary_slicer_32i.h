@@ -58,9 +58,9 @@
 #define INCLUDED_volk_32f_binary_slicer_32i_H
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_binary_slicer_32i_generic(int* cVector,
+static inline void volk_32f_binary_slicer_32i_e2k(int* cVector,
                                                       const float* aVector,
                                                       unsigned int num_points)
 {
@@ -76,12 +76,12 @@ static inline void volk_32f_binary_slicer_32i_generic(int* cVector,
         }
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_binary_slicer_32i_generic_branchless(int* cVector,
+static inline void volk_32f_binary_slicer_32i_e2k_branchless(int* cVector,
                                                                  const float* aVector,
                                                                  unsigned int num_points)
 {
@@ -93,7 +93,7 @@ static inline void volk_32f_binary_slicer_32i_generic_branchless(int* cVector,
         *cPtr++ = (*aPtr++ >= 0);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_SSE2

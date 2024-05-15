@@ -43,9 +43,9 @@
 #include <inttypes.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16u_byteswap_generic(uint16_t* intsToSwap,
+static inline void volk_16u_byteswap_e2k(uint16_t* intsToSwap,
                                              unsigned int num_points)
 {
     uint16_t* inputPtr = intsToSwap;
@@ -56,7 +56,7 @@ static inline void volk_16u_byteswap_generic(uint16_t* intsToSwap,
         inputPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #if LV_HAVE_AVX2
@@ -200,7 +200,7 @@ static inline void volk_16u_byteswap_a_sse2(uint16_t* intsToSwap, unsigned int n
     }
 
     // Byteswap any remaining points:
-    volk_16u_byteswap_generic(inputPtr, num_points - eighthPoints * 8);
+    volk_16u_byteswap_e2k(inputPtr, num_points - eighthPoints * 8);
 }
 #endif /* LV_HAVE_SSE2 */
 
@@ -222,7 +222,7 @@ static inline void volk_16u_byteswap_neon(uint16_t* intsToSwap, unsigned int num
         inputPtr += 8;
     }
 
-    volk_16u_byteswap_generic(inputPtr, num_points - eighth_points * 8);
+    volk_16u_byteswap_e2k(inputPtr, num_points - eighth_points * 8);
 }
 #endif /* LV_HAVE_NEON */
 
@@ -267,7 +267,7 @@ static inline void volk_16u_byteswap_neon_table(uint16_t* intsToSwap,
         inputPtr += 16;
     }
 
-    volk_16u_byteswap_generic(inputPtr, num_points - n16points * 16);
+    volk_16u_byteswap_e2k(inputPtr, num_points - n16points * 16);
 }
 #endif /* LV_HAVE_NEON */
 

@@ -173,9 +173,9 @@ static inline void volk_32fc_magnitude_32f_u_sse(float* magnitudeVector,
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_magnitude_32f_generic(float* magnitudeVector,
+static inline void volk_32fc_magnitude_32f_e2k(float* magnitudeVector,
                                                    const lv_32fc_t* complexVector,
                                                    unsigned int num_points)
 {
@@ -188,7 +188,7 @@ static inline void volk_32fc_magnitude_32f_generic(float* magnitudeVector,
         *magnitudeVectorPtr++ = sqrtf((real * real) + (imag * imag));
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32fc_magnitude_32f_u_H */

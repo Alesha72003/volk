@@ -59,8 +59,8 @@
 #include <inttypes.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_s32f_multiply_32f_generic(float* cVector,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_s32f_multiply_32f_e2k(float* cVector,
                                                       const float* aVector,
                                                       const float scalar,
                                                       unsigned int num_points)
@@ -69,7 +69,7 @@ static inline void volk_32f_s32f_multiply_32f_generic(float* cVector,
         *cVector++ = (*aVector++) * scalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_SSE
 #include <xmmintrin.h>

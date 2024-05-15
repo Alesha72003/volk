@@ -62,9 +62,9 @@
 #include <stdio.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x2_subtract_32f_generic(float* cVector,
+static inline void volk_32f_x2_subtract_32f_e2k(float* cVector,
                                                     const float* aVector,
                                                     const float* bVector,
                                                     unsigned int num_points)
@@ -73,7 +73,7 @@ static inline void volk_32f_x2_subtract_32f_generic(float* cVector,
         *cVector++ = (*aVector++) - (*bVector++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX512F
@@ -99,7 +99,7 @@ static inline void volk_32f_x2_subtract_32f_a_avx512f(float* cVector,
         cVector += 16;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - sixteenthPoints * 16);
 }
 #endif /* LV_HAVE_AVX512F */
@@ -127,7 +127,7 @@ static inline void volk_32f_x2_subtract_32f_a_avx(float* cVector,
         cVector += 8;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - eighthPoints * 8);
 }
 #endif /* LV_HAVE_AVX */
@@ -155,7 +155,7 @@ static inline void volk_32f_x2_subtract_32f_a_sse(float* cVector,
         cVector += 4;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - quarterPoints * 4);
 }
 #endif /* LV_HAVE_SSE */
@@ -184,7 +184,7 @@ static inline void volk_32f_x2_subtract_32f_neon(float* cVector,
         cVector += 4;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - quarterPoints * 4);
 }
 #endif /* LV_HAVE_NEON */
@@ -238,7 +238,7 @@ static inline void volk_32f_x2_subtract_32f_u_avx512f(float* cVector,
         cVector += 16;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - sixteenthPoints * 16);
 }
 #endif /* LV_HAVE_AVX512F */
@@ -267,7 +267,7 @@ static inline void volk_32f_x2_subtract_32f_u_avx(float* cVector,
         cVector += 8;
     }
 
-    volk_32f_x2_subtract_32f_generic(
+    volk_32f_x2_subtract_32f_e2k(
         cVector, aVector, bVector, num_points - eighthPoints * 8);
 }
 #endif /* LV_HAVE_AVX */

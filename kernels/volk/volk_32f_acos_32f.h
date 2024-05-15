@@ -486,10 +486,10 @@ volk_32f_acos_32f_u_sse4_1(float* bVector, const float* aVector, unsigned int nu
 
 #endif /* LV_HAVE_SSE4_1 for aligned */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_acos_32f_generic(float* bVector, const float* aVector, unsigned int num_points)
+volk_32f_acos_32f_e2k(float* bVector, const float* aVector, unsigned int num_points)
 {
     float* bPtr = bVector;
     const float* aPtr = aVector;
@@ -499,6 +499,6 @@ volk_32f_acos_32f_generic(float* bVector, const float* aVector, unsigned int num
         *bPtr++ = acosf(*aPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32f_acos_32f_u_H */

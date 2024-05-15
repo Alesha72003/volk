@@ -172,10 +172,10 @@ volk_16ic_s32f_deinterleave_32f_x2_a_sse(float* iBuffer,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_16ic_s32f_deinterleave_32f_x2_generic(float* iBuffer,
+volk_16ic_s32f_deinterleave_32f_x2_e2k(float* iBuffer,
                                            float* qBuffer,
                                            const lv_16sc_t* complexVector,
                                            const float scalar,
@@ -190,7 +190,7 @@ volk_16ic_s32f_deinterleave_32f_x2_generic(float* iBuffer,
         *qBufferPtr++ = (float)(*complexVectorPtr++) / scalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>
@@ -233,7 +233,7 @@ static inline void volk_16ic_s32f_deinterleave_32f_x2_neon(float* iBuffer,
         *qBufferPtr++ = (float)(*complexVectorPtr++) / scalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_ORC
 extern void volk_16ic_s32f_deinterleave_32f_x2_a_orc_impl(float* iBuffer,

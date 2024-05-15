@@ -196,8 +196,8 @@ extern void volk_16i_max_star_horizontal_16i_a_neonasm(int16_t* target,
                                                        unsigned int num_points);
 #endif /* LV_HAVE_NEONV7 */
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_16i_max_star_horizontal_16i_generic(int16_t* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_16i_max_star_horizontal_16i_e2k(int16_t* target,
                                                             int16_t* src0,
                                                             unsigned int num_points)
 {
@@ -212,6 +212,6 @@ static inline void volk_16i_max_star_horizontal_16i_generic(int16_t* target,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #endif /*INCLUDED_volk_16i_max_star_horizontal_16i_a_H*/

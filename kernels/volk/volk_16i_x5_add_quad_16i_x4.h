@@ -182,9 +182,9 @@ static inline void volk_16i_x5_add_quad_16i_x4_neon(short* target0,
 
 #endif /* LV_HAVE_NEON */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16i_x5_add_quad_16i_x4_generic(short* target0,
+static inline void volk_16i_x5_add_quad_16i_x4_e2k(short* target0,
                                                        short* target1,
                                                        short* target2,
                                                        short* target3,
@@ -209,6 +209,6 @@ static inline void volk_16i_x5_add_quad_16i_x4_generic(short* target0,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /*INCLUDED_volk_16i_x5_add_quad_16i_x4_a_H*/

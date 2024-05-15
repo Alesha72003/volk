@@ -150,10 +150,10 @@ volk_32f_sqrt_32f_neon(float* cVector, const float* aVector, unsigned int num_po
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_sqrt_32f_generic(float* cVector, const float* aVector, unsigned int num_points)
+volk_32f_sqrt_32f_e2k(float* cVector, const float* aVector, unsigned int num_points)
 {
     float* cPtr = cVector;
     const float* aPtr = aVector;
@@ -164,7 +164,7 @@ volk_32f_sqrt_32f_generic(float* cVector, const float* aVector, unsigned int num
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32f_sqrt_32f_a_H */
 

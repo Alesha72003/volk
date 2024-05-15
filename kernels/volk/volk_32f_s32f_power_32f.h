@@ -62,9 +62,9 @@
 #include <math.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_power_32f_generic(float* cVector,
+static inline void volk_32f_s32f_power_32f_e2k(float* cVector,
                                                    const float* aVector,
                                                    const float power,
                                                    unsigned int num_points)
@@ -77,7 +77,7 @@ static inline void volk_32f_s32f_power_32f_generic(float* cVector,
         *cPtr++ = powf((*aPtr++), power);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_s32f_power_32f_a_H */

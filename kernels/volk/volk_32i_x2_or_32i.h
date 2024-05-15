@@ -217,9 +217,9 @@ static inline void volk_32i_x2_or_32i_neon(int32_t* cVector,
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32i_x2_or_32i_generic(int32_t* cVector,
+static inline void volk_32i_x2_or_32i_e2k(int32_t* cVector,
                                               const int32_t* aVector,
                                               const int32_t* bVector,
                                               unsigned int num_points)
@@ -233,7 +233,7 @@ static inline void volk_32i_x2_or_32i_generic(int32_t* cVector,
         *cPtr++ = (*aPtr++) | (*bPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_ORC

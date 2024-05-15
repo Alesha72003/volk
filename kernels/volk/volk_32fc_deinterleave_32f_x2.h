@@ -183,9 +183,9 @@ static inline void volk_32fc_deinterleave_32f_x2_neon(float* iBuffer,
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_deinterleave_32f_x2_generic(float* iBuffer,
+static inline void volk_32fc_deinterleave_32f_x2_e2k(float* iBuffer,
                                                          float* qBuffer,
                                                          const lv_32fc_t* complexVector,
                                                          unsigned int num_points)
@@ -199,7 +199,7 @@ static inline void volk_32fc_deinterleave_32f_x2_generic(float* iBuffer,
         *qBufferPtr++ = *complexVectorPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32fc_deinterleave_32f_x2_a_H */
 

@@ -200,9 +200,9 @@ static inline void volk_32fc_s32fc_multiply2_32fc_u_sse3(lv_32fc_t* cVector,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_s32fc_multiply2_32fc_generic(lv_32fc_t* cVector,
+static inline void volk_32fc_s32fc_multiply2_32fc_e2k(lv_32fc_t* cVector,
                                                           const lv_32fc_t* aVector,
                                                           const lv_32fc_t* scalar,
                                                           unsigned int num_points)
@@ -228,7 +228,7 @@ static inline void volk_32fc_s32fc_multiply2_32fc_generic(lv_32fc_t* cVector,
     while (number-- > 0)
         *cPtr++ = *aPtr++ * (*scalar);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32fc_x2_multiply2_32fc_u_H */

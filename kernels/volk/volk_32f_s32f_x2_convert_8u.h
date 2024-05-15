@@ -76,9 +76,9 @@ static inline void volk_32f_s32f_x2_convert_8u_single(uint8_t* out, const float 
 }
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_x2_convert_8u_generic(uint8_t* outputVector,
+static inline void volk_32f_s32f_x2_convert_8u_e2k(uint8_t* outputVector,
                                                        const float* inputVector,
                                                        const float scale,
                                                        const float bias,
@@ -92,7 +92,7 @@ static inline void volk_32f_s32f_x2_convert_8u_generic(uint8_t* outputVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #if LV_HAVE_AVX2 && LV_HAVE_FMA

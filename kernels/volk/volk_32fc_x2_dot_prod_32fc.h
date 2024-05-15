@@ -58,10 +58,10 @@ extern void volk_32fc_x2_dot_prod_32fc_sifive_u74(lv_32fc_t* result,
                                                   unsigned int num_points);
 #endif
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 
-static inline void volk_32fc_x2_dot_prod_32fc_generic(lv_32fc_t* result,
+static inline void volk_32fc_x2_dot_prod_32fc_e2k(lv_32fc_t* result,
                                                       const lv_32fc_t* input,
                                                       const lv_32fc_t* taps,
                                                       unsigned int num_points)
@@ -95,7 +95,7 @@ static inline void volk_32fc_x2_dot_prod_32fc_generic(lv_32fc_t* result,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #ifdef LV_HAVE_SSE3

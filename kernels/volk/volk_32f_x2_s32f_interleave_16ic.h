@@ -241,9 +241,9 @@ static inline void volk_32f_x2_s32f_interleave_16ic_a_sse(lv_16sc_t* complexVect
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x2_s32f_interleave_16ic_generic(lv_16sc_t* complexVector,
+static inline void volk_32f_x2_s32f_interleave_16ic_e2k(lv_16sc_t* complexVector,
                                                             const float* iBuffer,
                                                             const float* qBuffer,
                                                             const float scalar,
@@ -259,7 +259,7 @@ static inline void volk_32f_x2_s32f_interleave_16ic_generic(lv_16sc_t* complexVe
         *complexVectorPtr++ = (int16_t)rintf(*qBufferPtr++ * scalar);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_x2_s32f_interleave_16ic_a_H */

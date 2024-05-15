@@ -80,10 +80,10 @@
 #include <volk/volk_complex.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32fc_x2_s32fc_multiply_conjugate_add2_32fc_generic(lv_32fc_t* cVector,
+volk_32fc_x2_s32fc_multiply_conjugate_add2_32fc_e2k(lv_32fc_t* cVector,
                                                         const lv_32fc_t* aVector,
                                                         const lv_32fc_t* bVector,
                                                         const lv_32fc_t* scalar,
@@ -112,7 +112,7 @@ volk_32fc_x2_s32fc_multiply_conjugate_add2_32fc_generic(lv_32fc_t* cVector,
         *cPtr++ = (*aPtr++) + lv_conj(*bPtr++) * (*scalar);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX

@@ -200,8 +200,8 @@ static inline void volk_16i_x4_quad_max_star_16i_neon(short* target,
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_16i_x4_quad_max_star_16i_generic(short* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_16i_x4_quad_max_star_16i_e2k(short* target,
                                                          short* src0,
                                                          short* src1,
                                                          short* src2,
@@ -223,6 +223,6 @@ static inline void volk_16i_x4_quad_max_star_16i_generic(short* target,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #endif /*INCLUDED_volk_16i_x4_quad_max_star_16i_a_H*/

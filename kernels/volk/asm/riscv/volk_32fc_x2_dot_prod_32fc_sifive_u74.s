@@ -8,7 +8,7 @@
         # About 41% less CPU use than GCC, measured with volk_profile,
         # and a test gnuradio graph using Freq XLAT FIR filter.
         #
-        # The generic C code is also 2x unrolled, but its main flaw
+        # The e2k C code is also 2x unrolled, but its main flaw
         # seems to be not properly fusing into fmadd and fnmsub.
         #
         # Focus of this hand coded assembly:

@@ -51,10 +51,10 @@
 #include <stdio.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 
-static inline void volk_64u_popcnt_generic(uint64_t* ret, const uint64_t value)
+static inline void volk_64u_popcnt_e2k(uint64_t* ret, const uint64_t value)
 {
     // const uint32_t* valueVector = (const uint32_t*)&value;
 
@@ -81,7 +81,7 @@ static inline void volk_64u_popcnt_generic(uint64_t* ret, const uint64_t value)
     *ret = retVal64;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #if LV_HAVE_SSE4_2 && LV_HAVE_64

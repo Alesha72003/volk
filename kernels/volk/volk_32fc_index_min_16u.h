@@ -306,8 +306,8 @@ static inline void volk_32fc_index_min_16u_a_sse3(uint16_t* target,
 
 #endif /*LV_HAVE_SSE3*/
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32fc_index_min_16u_generic(uint16_t* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_32fc_index_min_16u_e2k(uint16_t* target,
                                                    const lv_32fc_t* source,
                                                    uint32_t num_points)
 {
@@ -329,7 +329,7 @@ static inline void volk_32fc_index_min_16u_generic(uint16_t* target,
     target[0] = index;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #endif /*INCLUDED_volk_32fc_index_min_16u_a_H*/
 

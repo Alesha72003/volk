@@ -136,9 +136,9 @@ static inline void volk_32f_x2_min_32f_neon(float* cVector,
 #endif /* LV_HAVE_NEON */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x2_min_32f_generic(float* cVector,
+static inline void volk_32f_x2_min_32f_e2k(float* cVector,
                                                const float* aVector,
                                                const float* bVector,
                                                unsigned int num_points)
@@ -154,7 +154,7 @@ static inline void volk_32f_x2_min_32f_generic(float* cVector,
         *cPtr++ = (a < b ? a : b);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_ORC

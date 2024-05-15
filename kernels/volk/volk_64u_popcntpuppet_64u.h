@@ -14,18 +14,18 @@
 #include <string.h>
 #include <volk/volk_64u_popcnt.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_64u_popcntpuppet_64u_generic(uint64_t* outVector,
+#ifdef LV_HAVE_E2K
+static inline void volk_64u_popcntpuppet_64u_e2k(uint64_t* outVector,
                                                      const uint64_t* inVector,
                                                      unsigned int num_points)
 {
     unsigned int ii;
     for (ii = 0; ii < num_points; ++ii) {
-        volk_64u_popcnt_generic(outVector + ii, num_points);
+        volk_64u_popcnt_e2k(outVector + ii, num_points);
     }
     memcpy((void*)outVector, (void*)inVector, num_points * sizeof(uint64_t));
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #if LV_HAVE_SSE4_2 && LV_HAVE_64
 static inline void volk_64u_popcntpuppet_64u_a_sse4_2(uint64_t* outVector,

@@ -40,9 +40,9 @@ static inline void adjust_frozen_mask(unsigned char* mask, const unsigned int fr
     }
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
-volk_8u_x3_encodepolarpuppet_8u_generic(unsigned char* frame,
+volk_8u_x3_encodepolarpuppet_8u_e2k(unsigned char* frame,
                                         unsigned char* frozen_bit_mask,
                                         const unsigned char* frozen_bits,
                                         const unsigned char* info_bits,
@@ -56,11 +56,11 @@ volk_8u_x3_encodepolarpuppet_8u_generic(unsigned char* frame,
     unsigned char* temp = (unsigned char*)volk_malloc(sizeof(unsigned char) * frame_size,
                                                       volk_get_alignment());
     adjust_frozen_mask(frozen_bit_mask, frame_size);
-    volk_8u_x3_encodepolar_8u_x2_generic(
+    volk_8u_x3_encodepolar_8u_x2_e2k(
         frame, temp, frozen_bit_mask, frozen_bits, info_bits, frame_size);
     volk_free(temp);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_SSSE3

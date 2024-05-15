@@ -63,17 +63,17 @@ static inline void volk_32f_x2_powpuppet_32f_a_sse4_1(float* cVector,
 }
 #endif /* LV_HAVE_SSE4_1 for aligned */
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_x2_powpuppet_32f_generic(float* cVector,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_x2_powpuppet_32f_e2k(float* cVector,
                                                      const float* bVector,
                                                      const float* aVector,
                                                      unsigned int num_points)
 {
     float* aVectorPos = make_positive(aVector, num_points);
-    volk_32f_x2_pow_32f_generic(cVector, bVector, aVectorPos, num_points);
+    volk_32f_x2_pow_32f_e2k(cVector, bVector, aVectorPos, num_points);
     volk_free(aVectorPos);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_SSE4_1
 static inline void volk_32f_x2_powpuppet_32f_u_sse4_1(float* cVector,

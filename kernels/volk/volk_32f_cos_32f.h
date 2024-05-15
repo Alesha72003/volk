@@ -883,14 +883,14 @@ volk_32f_cos_32f_u_sse4_1(float* bVector, const float* aVector, unsigned int num
 #endif /* LV_HAVE_SSE4_1 for unaligned */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 /*
  * For derivation see
  * Shibata, Naoki, "Efficient evaluation methods of elementary functions
  * suitable for SIMD computation," in Springer-Verlag 2010
  */
-static inline void volk_32f_cos_32f_generic_fast(float* bVector,
+static inline void volk_32f_cos_32f_e2k_fast(float* bVector,
                                                  const float* aVector,
                                                  unsigned int num_points)
 {
@@ -941,13 +941,13 @@ static inline void volk_32f_cos_32f_generic_fast(float* bVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_cos_32f_generic(float* bVector, const float* aVector, unsigned int num_points)
+volk_32f_cos_32f_e2k(float* bVector, const float* aVector, unsigned int num_points)
 {
     float* bPtr = bVector;
     const float* aPtr = aVector;
@@ -958,7 +958,7 @@ volk_32f_cos_32f_generic(float* bVector, const float* aVector, unsigned int num_
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_NEON

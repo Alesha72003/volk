@@ -518,9 +518,9 @@ static inline void volk_32f_x2_pow_32f_a_sse4_1(float* cVector,
 
 #define POW_POLY_DEGREE 3
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x2_pow_32f_generic(float* cVector,
+static inline void volk_32f_x2_pow_32f_e2k(float* cVector,
                                                const float* bVector,
                                                const float* aVector,
                                                unsigned int num_points)
@@ -534,7 +534,7 @@ static inline void volk_32f_x2_pow_32f_generic(float* cVector,
         *cPtr++ = powf(*aPtr++, *bPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_SSE4_1

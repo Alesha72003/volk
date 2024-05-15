@@ -60,9 +60,9 @@
 #define INCLUDED_volk_32f_binary_slicer_8i_H
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_binary_slicer_8i_generic(int8_t* cVector,
+static inline void volk_32f_binary_slicer_8i_e2k(int8_t* cVector,
                                                      const float* aVector,
                                                      unsigned int num_points)
 {
@@ -78,12 +78,12 @@ static inline void volk_32f_binary_slicer_8i_generic(int8_t* cVector,
         }
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_binary_slicer_8i_generic_branchless(int8_t* cVector,
+static inline void volk_32f_binary_slicer_8i_e2k_branchless(int8_t* cVector,
                                                                 const float* aVector,
                                                                 unsigned int num_points)
 {
@@ -95,7 +95,7 @@ static inline void volk_32f_binary_slicer_8i_generic_branchless(int8_t* cVector,
         *cPtr++ = (*aPtr++ >= 0);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX2

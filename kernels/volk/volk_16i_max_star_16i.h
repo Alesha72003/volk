@@ -107,10 +107,10 @@ volk_16i_max_star_16i_a_ssse3(short* target, short* src0, unsigned int num_point
 
 #endif /*LV_HAVE_SSSE3*/
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_16i_max_star_16i_generic(short* target, short* src0, unsigned int num_points)
+volk_16i_max_star_16i_e2k(short* target, short* src0, unsigned int num_points)
 {
     const unsigned int num_bytes = num_points * 2;
 
@@ -125,7 +125,7 @@ volk_16i_max_star_16i_generic(short* target, short* src0, unsigned int num_point
     target[0] = candidate;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_16i_max_star_16i_a_H*/

@@ -139,9 +139,9 @@ static inline int calculate_max_stage_depth_for_row(const int frame_exp, const i
     return max_stage_depth;
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_8u_polarbutterfly_32f_generic(float* llrs,
+static inline void volk_32f_8u_polarbutterfly_32f_e2k(float* llrs,
                                                           unsigned char* u,
                                                           const int frame_exp,
                                                           const int stage,
@@ -179,18 +179,18 @@ static inline void volk_32f_8u_polarbutterfly_32f_generic(float* llrs,
     if (frame_exp > next_stage) {
         unsigned char* u_half = u + frame_size;
         odd_xor_even_values(u_half, u, u_num);
-        volk_32f_8u_polarbutterfly_32f_generic(
+        volk_32f_8u_polarbutterfly_32f_e2k(
             next_llrs, u_half, frame_exp, next_stage, u_num, next_upper_row);
 
         even_u_values(u_half, u, u_num);
-        volk_32f_8u_polarbutterfly_32f_generic(
+        volk_32f_8u_polarbutterfly_32f_e2k(
             next_llrs, u_half, frame_exp, next_stage, u_num, next_lower_row);
     }
 
     *call_row_llr = llr_odd(*upper_right_llr_ptr, *lower_right_llr_ptr);
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX
@@ -213,7 +213,7 @@ static inline void volk_32f_8u_polarbutterfly_32f_u_avx(float* llrs,
 
     const int max_stage_depth = calculate_max_stage_depth_for_row(frame_exp, row);
     if (max_stage_depth < 3) { // vectorized version needs larger vectors.
-        volk_32f_8u_polarbutterfly_32f_generic(llrs, u, frame_exp, stage, u_num, row);
+        volk_32f_8u_polarbutterfly_32f_e2k(llrs, u, frame_exp, stage, u_num, row);
         return;
     }
 
@@ -308,7 +308,7 @@ static inline void volk_32f_8u_polarbutterfly_32f_u_avx2(float* llrs,
 
     const int max_stage_depth = calculate_max_stage_depth_for_row(frame_exp, row);
     if (max_stage_depth < 3) { // vectorized version needs larger vectors.
-        volk_32f_8u_polarbutterfly_32f_generic(llrs, u, frame_exp, stage, u_num, row);
+        volk_32f_8u_polarbutterfly_32f_e2k(llrs, u, frame_exp, stage, u_num, row);
         return;
     }
 

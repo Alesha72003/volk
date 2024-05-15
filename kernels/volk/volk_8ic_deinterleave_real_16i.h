@@ -203,9 +203,9 @@ static inline void volk_8ic_deinterleave_real_16i_a_avx(int16_t* iBuffer,
 #endif /* LV_HAVE_AVX */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_8ic_deinterleave_real_16i_generic(int16_t* iBuffer,
+static inline void volk_8ic_deinterleave_real_16i_e2k(int16_t* iBuffer,
                                                           const lv_8sc_t* complexVector,
                                                           unsigned int num_points)
 {
@@ -217,7 +217,7 @@ static inline void volk_8ic_deinterleave_real_16i_generic(int16_t* iBuffer,
         complexVectorPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_8ic_deinterleave_real_16i_a_H */

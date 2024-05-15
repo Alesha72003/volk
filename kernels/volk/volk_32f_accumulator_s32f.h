@@ -216,8 +216,8 @@ static inline void volk_32f_accumulator_s32f_u_sse(float* result,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_accumulator_s32f_generic(float* result,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_accumulator_s32f_e2k(float* result,
                                                      const float* inputBuffer,
                                                      unsigned int num_points)
 {
@@ -230,6 +230,6 @@ static inline void volk_32f_accumulator_s32f_generic(float* result,
     }
     *result = returnValue;
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32f_accumulator_s32f_a_H */

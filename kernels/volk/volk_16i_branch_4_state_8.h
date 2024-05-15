@@ -151,8 +151,8 @@ static inline void volk_16i_branch_4_state_8_a_ssse3(short* target,
 
 #endif /*LV_HAVE_SSEs*/
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_16i_branch_4_state_8_generic(short* target,
+#ifdef LV_HAVE_E2K
+static inline void volk_16i_branch_4_state_8_e2k(short* target,
                                                      short* src0,
                                                      char** permuters,
                                                      short* cntl2,
@@ -198,7 +198,7 @@ static inline void volk_16i_branch_4_state_8_generic(short* target,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_16i_branch_4_state_8_a_H*/

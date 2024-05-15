@@ -207,9 +207,9 @@ static inline void volk_32f_s32f_32f_fm_detect_32f_a_sse(float* outputVector,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_32f_fm_detect_32f_generic(float* outputVector,
+static inline void volk_32f_s32f_32f_fm_detect_32f_e2k(float* outputVector,
                                                            const float* inputVector,
                                                            const float bound,
                                                            float* saveValue,
@@ -243,7 +243,7 @@ static inline void volk_32f_s32f_32f_fm_detect_32f_generic(float* outputVector,
 
     *saveValue = inputVector[num_points - 1];
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_s32f_32f_fm_detect_32f_a_H */

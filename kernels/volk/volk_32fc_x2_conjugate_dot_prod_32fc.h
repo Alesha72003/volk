@@ -65,9 +65,9 @@
 #include <volk/volk_complex.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_x2_conjugate_dot_prod_32fc_generic(lv_32fc_t* result,
+static inline void volk_32fc_x2_conjugate_dot_prod_32fc_e2k(lv_32fc_t* result,
                                                                 const lv_32fc_t* input,
                                                                 const lv_32fc_t* taps,
                                                                 unsigned int num_points)
@@ -79,9 +79,9 @@ static inline void volk_32fc_x2_conjugate_dot_prod_32fc_generic(lv_32fc_t* resul
     *result = res;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void volk_32fc_x2_conjugate_dot_prod_32fc_block(lv_32fc_t* result,
                                                               const lv_32fc_t* input,
@@ -118,7 +118,7 @@ static inline void volk_32fc_x2_conjugate_dot_prod_32fc_block(lv_32fc_t* result,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #ifdef LV_HAVE_AVX
 

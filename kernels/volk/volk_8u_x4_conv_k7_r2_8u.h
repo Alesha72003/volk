@@ -71,7 +71,7 @@ static inline void renormalize(unsigned char* X)
 }
 
 
-// helper BFLY for GENERIC version
+// helper BFLY for E2K version
 static inline void BFLY(int i,
                         int s,
                         unsigned char* syms,
@@ -434,9 +434,9 @@ static inline void volk_8u_x4_conv_k7_r2_8u_neonspiral(unsigned char* Y,
 
 #endif /*LV_HAVE_NEON*/
 
-#if LV_HAVE_GENERIC
+#if LV_HAVE_E2K
 
-static inline void volk_8u_x4_conv_k7_r2_8u_generic(unsigned char* Y,
+static inline void volk_8u_x4_conv_k7_r2_8u_e2k(unsigned char* Y,
                                                     unsigned char* X,
                                                     unsigned char* syms,
                                                     unsigned char* dec,
@@ -463,6 +463,6 @@ static inline void volk_8u_x4_conv_k7_r2_8u_generic(unsigned char* Y,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /*INCLUDED_volk_8u_x4_conv_k7_r2_8u_H*/

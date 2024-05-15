@@ -62,10 +62,10 @@
 #include <volk/volk_common.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 
-static inline void volk_32f_x2_dot_prod_32f_generic(float* result,
+static inline void volk_32f_x2_dot_prod_32f_e2k(float* result,
                                                     const float* input,
                                                     const float* taps,
                                                     unsigned int num_points)
@@ -83,7 +83,7 @@ static inline void volk_32f_x2_dot_prod_32f_generic(float* result,
     *result = dotProduct;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #ifdef LV_HAVE_SSE

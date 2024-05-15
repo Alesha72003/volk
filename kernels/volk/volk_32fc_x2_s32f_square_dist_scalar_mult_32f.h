@@ -300,9 +300,9 @@ volk_32fc_x2_s32f_square_dist_scalar_mult_32f_a_sse(float* target,
 }
 #endif // LV_HAVE_SSE
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
-volk_32fc_x2_s32f_square_dist_scalar_mult_32f_generic(float* target,
+volk_32fc_x2_s32f_square_dist_scalar_mult_32f_e2k(float* target,
                                                       lv_32fc_t* src0,
                                                       lv_32fc_t* points,
                                                       float scalar,
@@ -312,7 +312,7 @@ volk_32fc_x2_s32f_square_dist_scalar_mult_32f_generic(float* target,
     calculate_scaled_distances(target, symbol, points, scalar, num_points);
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_32fc_x2_s32f_square_dist_scalar_mult_32f_a_H*/

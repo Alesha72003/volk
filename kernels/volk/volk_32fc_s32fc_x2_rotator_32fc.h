@@ -82,19 +82,19 @@
 #include <volk/volk_complex.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_s32fc_x2_rotator_32fc_generic(lv_32fc_t* outVector,
+static inline void volk_32fc_s32fc_x2_rotator_32fc_e2k(lv_32fc_t* outVector,
                                                            const lv_32fc_t* inVector,
                                                            const lv_32fc_t phase_inc,
                                                            lv_32fc_t* phase,
                                                            unsigned int num_points)
 {
-    volk_32fc_s32fc_x2_rotator2_32fc_generic(
+    volk_32fc_s32fc_x2_rotator2_32fc_e2k(
         outVector, inVector, &phase_inc, phase, num_points);
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_NEON

@@ -13,13 +13,13 @@
 #include <inttypes.h>
 #include <volk/volk_32f_s32f_x2_convert_8u.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_s32f_convertpuppet_8u_generic(uint8_t* output,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_s32f_convertpuppet_8u_e2k(uint8_t* output,
                                                           const float* input,
                                                           float scale,
                                                           unsigned int num_points)
 {
-    volk_32f_s32f_x2_convert_8u_generic(output, input, scale, 128.0, num_points);
+    volk_32f_s32f_x2_convert_8u_e2k(output, input, scale, 128.0, num_points);
 }
 #endif
 

@@ -182,9 +182,9 @@ static inline void volk_64f_x2_min_64f_a_sse2(double* cVector,
 #endif /* LV_HAVE_SSE2 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_64f_x2_min_64f_generic(double* cVector,
+static inline void volk_64f_x2_min_64f_e2k(double* cVector,
                                                const double* aVector,
                                                const double* bVector,
                                                unsigned int num_points)
@@ -200,7 +200,7 @@ static inline void volk_64f_x2_min_64f_generic(double* cVector,
         *cPtr++ = (a < b ? a : b);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_64f_x2_min_64f_a_H */

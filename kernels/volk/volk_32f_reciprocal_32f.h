@@ -53,15 +53,15 @@
 #ifndef INCLUDED_volk_32f_reciprocal_32f_a_H
 #define INCLUDED_volk_32f_reciprocal_32f_a_H
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
-volk_32f_reciprocal_32f_generic(float* out, const float* in, unsigned int num_points)
+volk_32f_reciprocal_32f_e2k(float* out, const float* in, unsigned int num_points)
 {
     for (unsigned int i = 0; i < num_points; i++) {
         out[i] = 1.f / in[i];
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_SSE
 #include <xmmintrin.h>
@@ -81,7 +81,7 @@ volk_32f_reciprocal_32f_a_sse(float* out, const float* in, unsigned int num_poin
 
     const unsigned int done = quarter_points * 4;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_SSE */
 
@@ -103,7 +103,7 @@ volk_32f_reciprocal_32f_a_avx(float* out, const float* in, unsigned int num_poin
 
     const unsigned int done = eighth_points * 8;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_AVX */
 
@@ -124,7 +124,7 @@ volk_32f_reciprocal_32f_a_avx512(float* out, const float* in, unsigned int num_p
 
     const unsigned int done = sixteenth_points * 16;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_AVX512F */
 
@@ -151,7 +151,7 @@ volk_32f_reciprocal_32f_u_sse(float* out, const float* in, unsigned int num_poin
 
     const unsigned int done = quarter_points * 4;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_SSE */
 
@@ -173,7 +173,7 @@ volk_32f_reciprocal_32f_u_avx(float* out, const float* in, unsigned int num_poin
 
     const unsigned int done = eighth_points * 8;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_AVX */
 
@@ -194,7 +194,7 @@ volk_32f_reciprocal_32f_u_avx512(float* out, const float* in, unsigned int num_p
 
     const unsigned int done = sixteenth_points * 16;
 
-    volk_32f_reciprocal_32f_generic(out, in, num_points - done);
+    volk_32f_reciprocal_32f_e2k(out, in, num_points - done);
 }
 #endif /* LV_HAVE_AVX512F */
 

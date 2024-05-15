@@ -307,9 +307,9 @@ volk_32fc_index_max_16u_a_sse3(uint16_t* target, lv_32fc_t* src0, uint32_t num_p
 
 #endif /*LV_HAVE_SSE3*/
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
-volk_32fc_index_max_16u_generic(uint16_t* target, lv_32fc_t* src0, uint32_t num_points)
+volk_32fc_index_max_16u_e2k(uint16_t* target, lv_32fc_t* src0, uint32_t num_points)
 {
     num_points = (num_points > USHRT_MAX) ? USHRT_MAX : num_points;
 
@@ -333,7 +333,7 @@ volk_32fc_index_max_16u_generic(uint16_t* target, lv_32fc_t* src0, uint32_t num_
     target[0] = index;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #endif /*INCLUDED_volk_32fc_index_max_16u_a_H*/
 

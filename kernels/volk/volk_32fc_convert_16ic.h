@@ -274,9 +274,9 @@ static inline void volk_32fc_convert_16ic_neonv8(lv_16sc_t* outputVector,
 #endif /* LV_HAVE_NEONV8 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_convert_16ic_generic(lv_16sc_t* outputVector,
+static inline void volk_32fc_convert_16ic_e2k(lv_16sc_t* outputVector,
                                                   const lv_32fc_t* inputVector,
                                                   unsigned int num_points)
 {
@@ -295,7 +295,7 @@ static inline void volk_32fc_convert_16ic_generic(lv_16sc_t* outputVector,
         *outputVectorPtr++ = (int16_t)rintf(aux);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32fc_convert_16ic_a_H */
 

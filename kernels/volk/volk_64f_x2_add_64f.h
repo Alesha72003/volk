@@ -61,9 +61,9 @@
 #include <inttypes.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_64f_x2_add_64f_generic(double* cVector,
+static inline void volk_64f_x2_add_64f_e2k(double* cVector,
                                                const double* aVector,
                                                const double* bVector,
                                                unsigned int num_points)
@@ -78,7 +78,7 @@ static inline void volk_64f_x2_add_64f_generic(double* cVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 /*
  * Unaligned versions

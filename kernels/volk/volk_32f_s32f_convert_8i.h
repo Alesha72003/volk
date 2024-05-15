@@ -75,9 +75,9 @@ static inline void volk_32f_s32f_convert_8i_single(int8_t* out, const float in)
     }
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_convert_8i_generic(int8_t* outputVector,
+static inline void volk_32f_s32f_convert_8i_e2k(int8_t* outputVector,
                                                     const float* inputVector,
                                                     const float scalar,
                                                     unsigned int num_points)
@@ -90,7 +90,7 @@ static inline void volk_32f_s32f_convert_8i_generic(int8_t* outputVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX2

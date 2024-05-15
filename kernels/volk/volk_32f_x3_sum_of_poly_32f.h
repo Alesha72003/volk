@@ -312,9 +312,9 @@ static inline void volk_32f_x3_sum_of_poly_32f_a_avx(float* target,
 #endif // LV_HAVE_AVX
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x3_sum_of_poly_32f_generic(float* target,
+static inline void volk_32f_x3_sum_of_poly_32f_e2k(float* target,
                                                        float* src0,
                                                        float* center_point_array,
                                                        float* cutoff,
@@ -358,7 +358,7 @@ static inline void volk_32f_x3_sum_of_poly_32f_generic(float* target,
     *target += (float)(num_points)*center_point_array[4];
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>

@@ -226,9 +226,9 @@ static inline void volk_16ic_deinterleave_real_8i_a_ssse3(int8_t* iBuffer,
 }
 #endif /* LV_HAVE_SSSE3 */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16ic_deinterleave_real_8i_generic(int8_t* iBuffer,
+static inline void volk_16ic_deinterleave_real_8i_e2k(int8_t* iBuffer,
                                                           const lv_16sc_t* complexVector,
                                                           unsigned int num_points)
 {
@@ -240,7 +240,7 @@ static inline void volk_16ic_deinterleave_real_8i_generic(int8_t* iBuffer,
         complexVectorPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>

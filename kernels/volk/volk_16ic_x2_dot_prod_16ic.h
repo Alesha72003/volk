@@ -40,9 +40,9 @@
 #include <volk/volk_complex.h>
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16ic_x2_dot_prod_16ic_generic(lv_16sc_t* result,
+static inline void volk_16ic_x2_dot_prod_16ic_e2k(lv_16sc_t* result,
                                                       const lv_16sc_t* in_a,
                                                       const lv_16sc_t* in_b,
                                                       unsigned int num_points)
@@ -56,7 +56,7 @@ static inline void volk_16ic_x2_dot_prod_16ic_generic(lv_16sc_t* result,
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #ifdef LV_HAVE_SSE2

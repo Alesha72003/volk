@@ -61,9 +61,9 @@
 #ifndef INCLUDED_volk_32fc_32f_add_32fc_u_H
 #define INCLUDED_volk_32fc_32f_add_32fc_u_H
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_32f_add_32fc_generic(lv_32fc_t* cVector,
+static inline void volk_32fc_32f_add_32fc_e2k(lv_32fc_t* cVector,
                                                   const lv_32fc_t* aVector,
                                                   const float* bVector,
                                                   unsigned int num_points)
@@ -77,7 +77,7 @@ static inline void volk_32fc_32f_add_32fc_generic(lv_32fc_t* cVector,
         *cPtr++ = (*aPtr++) + (*bPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_AVX

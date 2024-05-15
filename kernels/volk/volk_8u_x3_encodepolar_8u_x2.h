@@ -79,10 +79,10 @@ static inline void interleave_frozen_and_info_bits(unsigned char* target,
     }
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_8u_x3_encodepolar_8u_x2_generic(unsigned char* frame,
+volk_8u_x3_encodepolar_8u_x2_e2k(unsigned char* frame,
                                      unsigned char* temp,
                                      const unsigned char* frozen_bit_mask,
                                      const unsigned char* frozen_bits,
@@ -92,9 +92,9 @@ volk_8u_x3_encodepolar_8u_x2_generic(unsigned char* frame,
     // interleave
     interleave_frozen_and_info_bits(
         temp, frozen_bit_mask, frozen_bits, info_bits, frame_size);
-    volk_8u_x2_encodeframepolar_8u_generic(frame, temp, frame_size);
+    volk_8u_x2_encodeframepolar_8u_e2k(frame, temp, frame_size);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_SSSE3

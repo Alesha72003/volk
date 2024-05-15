@@ -117,9 +117,9 @@ static inline void volk_8i_convert_16i_u_sse4_1(int16_t* outputVector,
 #endif /* LV_HAVE_SSE4_1 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_8i_convert_16i_generic(int16_t* outputVector,
+static inline void volk_8i_convert_16i_e2k(int16_t* outputVector,
                                                const int8_t* inputVector,
                                                unsigned int num_points)
 {
@@ -131,7 +131,7 @@ static inline void volk_8i_convert_16i_generic(int16_t* outputVector,
         *outputVectorPtr++ = ((int16_t)(*inputVectorPtr++)) * 256;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_VOLK_8s_CONVERT_16s_UNALIGNED8_H */

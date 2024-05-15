@@ -260,10 +260,10 @@ volk_32f_index_max_16u_a_sse(uint16_t* target, const float* src0, uint32_t num_p
 #endif /*LV_HAVE_SSE*/
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_index_max_16u_generic(uint16_t* target, const float* src0, uint32_t num_points)
+volk_32f_index_max_16u_e2k(uint16_t* target, const float* src0, uint32_t num_points)
 {
     num_points = (num_points > USHRT_MAX) ? USHRT_MAX : num_points;
 
@@ -281,7 +281,7 @@ volk_32f_index_max_16u_generic(uint16_t* target, const float* src0, uint32_t num
     target[0] = index;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_32f_index_max_16u_a_H*/

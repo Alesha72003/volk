@@ -228,9 +228,9 @@ static inline void volk_16i_s32f_convert_32f_u_sse(float* outputVector,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_16i_s32f_convert_32f_generic(float* outputVector,
+static inline void volk_16i_s32f_convert_32f_e2k(float* outputVector,
                                                      const int16_t* inputVector,
                                                      const float scalar,
                                                      unsigned int num_points)
@@ -243,7 +243,7 @@ static inline void volk_16i_s32f_convert_32f_generic(float* outputVector,
         *outputVectorPtr++ = ((float)(*inputVectorPtr++)) / scalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEON
 #include <arm_neon.h>
@@ -266,7 +266,7 @@ static inline void volk_16i_s32f_convert_32f_neon(float* outputVector,
 
     inv_scale = vdupq_n_f32(1.0 / scalar);
 
-    // the generic disassembles to a 128-bit load
+    // the e2k disassembles to a 128-bit load
     // and duplicates every instruction to operate on 64-bits
     // at a time. This is only possible with lanes, which is faster
     // than just doing a vld1_s16, but still slower.

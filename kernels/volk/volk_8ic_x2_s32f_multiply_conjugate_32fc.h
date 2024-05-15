@@ -217,10 +217,10 @@ volk_8ic_x2_s32f_multiply_conjugate_32fc_a_sse4_1(lv_32fc_t* cVector,
 #endif /* LV_HAVE_SSE4_1 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_8ic_x2_s32f_multiply_conjugate_32fc_generic(lv_32fc_t* cVector,
+volk_8ic_x2_s32f_multiply_conjugate_32fc_e2k(lv_32fc_t* cVector,
                                                  const lv_8sc_t* aVector,
                                                  const lv_8sc_t* bVector,
                                                  const float scalar,
@@ -244,7 +244,7 @@ volk_8ic_x2_s32f_multiply_conjugate_32fc_generic(lv_32fc_t* cVector,
         *cPtr++ = (lv_cimag(temp) * invScalar);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_8ic_x2_s32f_multiply_conjugate_32fc_a_H */

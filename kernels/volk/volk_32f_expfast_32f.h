@@ -285,9 +285,9 @@ static inline void volk_32f_expfast_32f_u_sse4_1(float* bVector,
 #endif /* LV_HAVE_SSE4_1 for unaligned */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_expfast_32f_generic(float* bVector,
+static inline void volk_32f_expfast_32f_e2k(float* bVector,
                                                 const float* aVector,
                                                 unsigned int num_points)
 {
@@ -299,6 +299,6 @@ static inline void volk_32f_expfast_32f_generic(float* bVector,
         *bPtr++ = expf(*aPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32f_expfast_32f_u_H */

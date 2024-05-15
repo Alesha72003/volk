@@ -12,13 +12,13 @@
 
 #include <volk/volk_32f_s32f_s32f_mod_range_32f.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_s32f_mod_rangepuppet_32f_generic(float* output,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_s32f_mod_rangepuppet_32f_e2k(float* output,
                                                              const float* input,
                                                              float bound,
                                                              unsigned int num_points)
 {
-    volk_32f_s32f_s32f_mod_range_32f_generic(
+    volk_32f_s32f_s32f_mod_range_32f_e2k(
         output, input, bound - 3.131f, bound, num_points);
 }
 #endif

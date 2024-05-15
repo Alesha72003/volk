@@ -232,10 +232,10 @@ volk_8ic_s32f_deinterleave_real_32f_a_sse(float* iBuffer,
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_8ic_s32f_deinterleave_real_32f_generic(float* iBuffer,
+volk_8ic_s32f_deinterleave_real_32f_e2k(float* iBuffer,
                                             const lv_8sc_t* complexVector,
                                             const float scalar,
                                             unsigned int num_points)
@@ -249,7 +249,7 @@ volk_8ic_s32f_deinterleave_real_32f_generic(float* iBuffer,
         complexVectorPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_8ic_s32f_deinterleave_real_32f_a_H */

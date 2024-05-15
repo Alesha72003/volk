@@ -65,9 +65,9 @@
 #include <stdio.h>
 #include <volk/volk_common.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_s32f_magnitude_16i_generic(int16_t* magnitudeVector,
+static inline void volk_32fc_s32f_magnitude_16i_e2k(int16_t* magnitudeVector,
                                                         const lv_32fc_t* complexVector,
                                                         const float scalar,
                                                         unsigned int num_points)
@@ -82,7 +82,7 @@ static inline void volk_32fc_s32f_magnitude_16i_generic(int16_t* magnitudeVector
             (int16_t)rintf(scalar * sqrtf((real * real) + (imag * imag)));
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_AVX2
 #include <immintrin.h>
@@ -130,7 +130,7 @@ static inline void volk_32fc_s32f_magnitude_16i_a_avx2(int16_t* magnitudeVector,
     }
 
     number = eighthPoints * 8;
-    volk_32fc_s32f_magnitude_16i_generic(
+    volk_32fc_s32f_magnitude_16i_e2k(
         magnitudeVector + number, complexVector + number, scalar, num_points - number);
 }
 #endif /* LV_HAVE_AVX2 */
@@ -179,7 +179,7 @@ static inline void volk_32fc_s32f_magnitude_16i_a_sse3(int16_t* magnitudeVector,
     }
 
     number = quarterPoints * 4;
-    volk_32fc_s32f_magnitude_16i_generic(
+    volk_32fc_s32f_magnitude_16i_e2k(
         magnitudeVector + number, complexVector + number, scalar, num_points - number);
 }
 #endif /* LV_HAVE_SSE3 */
@@ -235,7 +235,7 @@ static inline void volk_32fc_s32f_magnitude_16i_a_sse(int16_t* magnitudeVector,
     }
 
     number = quarterPoints * 4;
-    volk_32fc_s32f_magnitude_16i_generic(
+    volk_32fc_s32f_magnitude_16i_e2k(
         magnitudeVector + number, complexVector + number, scalar, num_points - number);
 }
 #endif /* LV_HAVE_SSE */
@@ -297,7 +297,7 @@ static inline void volk_32fc_s32f_magnitude_16i_u_avx2(int16_t* magnitudeVector,
     }
 
     number = eighthPoints * 8;
-    volk_32fc_s32f_magnitude_16i_generic(
+    volk_32fc_s32f_magnitude_16i_e2k(
         magnitudeVector + number, complexVector + number, scalar, num_points - number);
 }
 #endif /* LV_HAVE_AVX2 */

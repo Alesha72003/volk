@@ -12,13 +12,13 @@
 
 #include <volk/volk_32f_s32f_x2_clamp_32f.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32f_s32f_clamppuppet_32f_generic(float* out,
+#ifdef LV_HAVE_E2K
+static inline void volk_32f_s32f_clamppuppet_32f_e2k(float* out,
                                                          const float* in,
                                                          const float min,
                                                          unsigned int num_points)
 {
-    volk_32f_s32f_x2_clamp_32f_generic(out, in, min, -min, num_points);
+    volk_32f_s32f_x2_clamp_32f_e2k(out, in, min, -min, num_points);
 }
 #endif
 

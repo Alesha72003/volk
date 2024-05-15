@@ -54,8 +54,8 @@
 #include <inttypes.h>
 #include <volk/volk_common.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_32fc_accumulator_s32fc_generic(lv_32fc_t* result,
+#ifdef LV_HAVE_E2K
+static inline void volk_32fc_accumulator_s32fc_e2k(lv_32fc_t* result,
                                                        const lv_32fc_t* inputBuffer,
                                                        unsigned int num_points)
 {
@@ -68,7 +68,7 @@ static inline void volk_32fc_accumulator_s32fc_generic(lv_32fc_t* result,
     }
     *result = returnValue;
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_AVX
 #include <immintrin.h>

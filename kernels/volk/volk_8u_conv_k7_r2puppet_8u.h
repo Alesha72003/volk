@@ -344,10 +344,10 @@ static inline void volk_8u_conv_k7_r2puppet_8u_avx2(unsigned char* dec,
 #endif /*LV_HAVE_AVX2*/
 
 
-#if LV_HAVE_GENERIC
+#if LV_HAVE_E2K
 
 
-static inline void volk_8u_conv_k7_r2puppet_8u_generic(unsigned char* dec,
+static inline void volk_8u_conv_k7_r2puppet_8u_e2k(unsigned char* dec,
                                                        unsigned char* syms,
                                                        unsigned int framebits)
 {
@@ -408,7 +408,7 @@ static inline void volk_8u_conv_k7_r2puppet_8u_generic(unsigned char* dec,
     // initialize decisions
     memset(D, 0, (d_numstates / 8) * (framebits + 6));
 
-    volk_8u_x4_conv_k7_r2_8u_generic(
+    volk_8u_x4_conv_k7_r2_8u_e2k(
         Y, X, syms, D, framebits / 2 - excess, excess, Branchtab);
 
     unsigned int min = X[0];
@@ -425,6 +425,6 @@ static inline void volk_8u_conv_k7_r2puppet_8u_generic(unsigned char* dec,
     return;
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /*INCLUDED_volk_8u_conv_k7_r2puppet_8u_H*/

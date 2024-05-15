@@ -78,9 +78,9 @@
 #define ROTATOR_RELOAD_4 (ROTATOR_RELOAD / 4)
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_s32fc_x2_rotator2_32fc_generic(lv_32fc_t* outVector,
+static inline void volk_32fc_s32fc_x2_rotator2_32fc_e2k(lv_32fc_t* outVector,
                                                             const lv_32fc_t* inVector,
                                                             const lv_32fc_t* phase_inc,
                                                             lv_32fc_t* phase,
@@ -106,7 +106,7 @@ static inline void volk_32fc_s32fc_x2_rotator2_32fc_generic(lv_32fc_t* outVector
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_NEON
@@ -481,7 +481,7 @@ static inline void volk_32fc_s32fc_x2_rotator2_32fc_a_avx(lv_32fc_t* outVector,
 
     _mm256_storeu_ps((float*)phase_Ptr, phase_Val);
     (*phase) = phase_Ptr[0];
-    volk_32fc_s32fc_x2_rotator2_32fc_generic(
+    volk_32fc_s32fc_x2_rotator2_32fc_e2k(
         cPtr, aPtr, phase_inc, phase, num_points % 4);
 }
 
@@ -556,7 +556,7 @@ static inline void volk_32fc_s32fc_x2_rotator2_32fc_u_avx(lv_32fc_t* outVector,
 
     _mm256_storeu_ps((float*)phase_Ptr, phase_Val);
     (*phase) = phase_Ptr[0];
-    volk_32fc_s32fc_x2_rotator2_32fc_generic(
+    volk_32fc_s32fc_x2_rotator2_32fc_e2k(
         cPtr, aPtr, phase_inc, phase, num_points % 4);
 }
 

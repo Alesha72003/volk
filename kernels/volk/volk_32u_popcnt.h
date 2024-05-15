@@ -46,9 +46,9 @@
 #include <inttypes.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32u_popcnt_generic(uint32_t* ret, const uint32_t value)
+static inline void volk_32u_popcnt_e2k(uint32_t* ret, const uint32_t value)
 {
     // This is faster than a lookup table
     uint32_t retVal = value;
@@ -62,7 +62,7 @@ static inline void volk_32u_popcnt_generic(uint32_t* ret, const uint32_t value)
     *ret = retVal;
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #ifdef LV_HAVE_SSE4_2

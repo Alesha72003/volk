@@ -52,9 +52,9 @@ static const unsigned char BitReverseTable256[] = {
     0x77, 0xF7, 0x0F, 0x8F, 0x4F, 0xCF, 0x2F, 0xAF, 0x6F, 0xEF, 0x1F, 0x9F, 0x5F, 0xDF,
     0x3F, 0xBF, 0x7F, 0xFF
 };
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
-volk_32u_reverse_32u_generic(uint32_t* out, const uint32_t* in, unsigned int num_points)
+volk_32u_reverse_32u_e2k(uint32_t* out, const uint32_t* in, unsigned int num_points)
 {
     const uint32_t* in_ptr = in;
     uint32_t* out_ptr = out;
@@ -80,9 +80,9 @@ volk_32u_reverse_32u_generic(uint32_t* out, const uint32_t* in, unsigned int num
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void volk_32u_reverse_32u_byte_shuffle(uint32_t* out,
                                                      const uint32_t* in,
                                                      unsigned int num_points)
@@ -117,11 +117,11 @@ static inline void volk_32u_reverse_32u_byte_shuffle(uint32_t* out,
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 // Idea from "Bit Twiddling Hacks", which dedicates this method to public domain
 // http://graphics.stanford.edu/~seander/bithacks.html#BitReverseTable
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
 volk_32u_reverse_32u_lut(uint32_t* out, const uint32_t* in, unsigned int num_points)
 {
@@ -137,11 +137,11 @@ volk_32u_reverse_32u_lut(uint32_t* out, const uint32_t* in, unsigned int num_poi
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 // Single-Byte code from "Bit Twiddling Hacks", which dedicates this method to public
 // domain http://graphics.stanford.edu/~seander/bithacks.html#ReverseByteWith64Bits
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void
 volk_32u_reverse_32u_2001magic(uint32_t* out, const uint32_t* in, unsigned int num_points)
 {
@@ -161,9 +161,9 @@ volk_32u_reverse_32u_2001magic(uint32_t* out, const uint32_t* in, unsigned int n
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 // Current gr-pager implementation
 static inline void
 volk_32u_reverse_32u_1972magic(uint32_t* out, const uint32_t* in, unsigned int num_points)
@@ -184,10 +184,10 @@ volk_32u_reverse_32u_1972magic(uint32_t* out, const uint32_t* in, unsigned int n
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 // After lengthy thought and quite a bit of whiteboarding:
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 static inline void volk_32u_reverse_32u_bintree_permute_top_down(uint32_t* out,
                                                                  const uint32_t* in,
                                                                  unsigned int num_points)
@@ -227,8 +227,8 @@ static inline void volk_32u_reverse_32u_bintree_permute_top_down(uint32_t* out,
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
-#ifdef LV_HAVE_GENERIC
+#endif /* LV_HAVE_E2K */
+#ifdef LV_HAVE_E2K
 static inline void volk_32u_reverse_32u_bintree_permute_bottom_up(uint32_t* out,
                                                                   const uint32_t* in,
                                                                   unsigned int num_points)
@@ -251,7 +251,7 @@ static inline void volk_32u_reverse_32u_bintree_permute_bottom_up(uint32_t* out,
         ++out_ptr;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_NEONV8
 #include <arm_neon.h>

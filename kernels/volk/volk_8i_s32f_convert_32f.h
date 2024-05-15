@@ -149,9 +149,9 @@ static inline void volk_8i_s32f_convert_32f_u_sse4_1(float* outputVector,
 }
 #endif /* LV_HAVE_SSE4_1 */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_8i_s32f_convert_32f_generic(float* outputVector,
+static inline void volk_8i_s32f_convert_32f_e2k(float* outputVector,
                                                     const int8_t* inputVector,
                                                     const float scalar,
                                                     unsigned int num_points)
@@ -165,7 +165,7 @@ static inline void volk_8i_s32f_convert_32f_generic(float* outputVector,
         *outputVectorPtr++ = ((float)(*inputVectorPtr++)) * iScalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_VOLK_8s_CONVERT_32f_UNALIGNED8_H */

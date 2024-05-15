@@ -67,9 +67,9 @@
 // Youngs and Cramer's Algorithm for calculating std and mean
 //   Using the methods discussed here:
 //   https://doi.org/10.1145/3221269.3223036
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_stddev_and_mean_32f_x2_generic(float* stddev,
+static inline void volk_32f_stddev_and_mean_32f_x2_e2k(float* stddev,
                                                            float* mean,
                                                            const float* inputBuffer,
                                                            unsigned int num_points)
@@ -120,7 +120,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_generic(float* stddev,
     *stddev = sqrtf(SquareSum[0] / num_points);
     *mean = Sum[0] / num_points;
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 static inline float update_square_sum_1_val(const float SquareSum,
                                             const float Sum,
@@ -188,7 +188,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_neon(float* stddev,
                                                         unsigned int num_points)
 {
     if (num_points < 8) {
-        volk_32f_stddev_and_mean_32f_x2_generic(stddev, mean, inputBuffer, num_points);
+        volk_32f_stddev_and_mean_32f_x2_e2k(stddev, mean, inputBuffer, num_points);
         return;
     }
 
@@ -271,7 +271,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_u_sse(float* stddev,
                                                          unsigned int num_points)
 {
     if (num_points < 8) {
-        volk_32f_stddev_and_mean_32f_x2_generic(stddev, mean, inputBuffer, num_points);
+        volk_32f_stddev_and_mean_32f_x2_e2k(stddev, mean, inputBuffer, num_points);
         return;
     }
 
@@ -348,7 +348,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_u_avx(float* stddev,
                                                          unsigned int num_points)
 {
     if (num_points < 16) {
-        volk_32f_stddev_and_mean_32f_x2_generic(stddev, mean, inputBuffer, num_points);
+        volk_32f_stddev_and_mean_32f_x2_e2k(stddev, mean, inputBuffer, num_points);
         return;
     }
 
@@ -425,7 +425,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_a_sse(float* stddev,
                                                          unsigned int num_points)
 {
     if (num_points < 8) {
-        volk_32f_stddev_and_mean_32f_x2_generic(stddev, mean, inputBuffer, num_points);
+        volk_32f_stddev_and_mean_32f_x2_e2k(stddev, mean, inputBuffer, num_points);
         return;
     }
 
@@ -501,7 +501,7 @@ static inline void volk_32f_stddev_and_mean_32f_x2_a_avx(float* stddev,
                                                          unsigned int num_points)
 {
     if (num_points < 16) {
-        volk_32f_stddev_and_mean_32f_x2_generic(stddev, mean, inputBuffer, num_points);
+        volk_32f_stddev_and_mean_32f_x2_e2k(stddev, mean, inputBuffer, num_points);
         return;
     }
 

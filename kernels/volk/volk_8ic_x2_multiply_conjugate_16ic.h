@@ -159,7 +159,7 @@ static inline void volk_8ic_x2_multiply_conjugate_16ic_a_sse4_1(lv_16sc_t* cVect
 }
 #endif /* LV_HAVE_SSE4_1 */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 /*!
   \brief Multiplys the one complex vector with the complex conjugate of the second complex
   vector and stores their results in the third vector \param cVector The complex vector
@@ -168,7 +168,7 @@ static inline void volk_8ic_x2_multiply_conjugate_16ic_a_sse4_1(lv_16sc_t* cVect
   conjugate and multiplied \param num_points The number of complex values in aVector and
   bVector to be multiplied together and stored into cVector
 */
-static inline void volk_8ic_x2_multiply_conjugate_16ic_generic(lv_16sc_t* cVector,
+static inline void volk_8ic_x2_multiply_conjugate_16ic_e2k(lv_16sc_t* cVector,
                                                                const lv_8sc_t* aVector,
                                                                const lv_8sc_t* bVector,
                                                                unsigned int num_points)
@@ -190,7 +190,7 @@ static inline void volk_8ic_x2_multiply_conjugate_16ic_generic(lv_16sc_t* cVecto
         *c16Ptr++ = (int16_t)lv_cimag(temp);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_8ic_x2_multiply_conjugate_16ic_a_H */
 

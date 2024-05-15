@@ -110,9 +110,9 @@ static inline void volk_64u_byteswap_u_sse2(uint64_t* intsToSwap, unsigned int n
 #endif /* LV_HAVE_SSE2 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_64u_byteswap_generic(uint64_t* intsToSwap,
+static inline void volk_64u_byteswap_e2k(uint64_t* intsToSwap,
                                              unsigned int num_points)
 {
     uint32_t* inputPtr = (uint32_t*)intsToSwap;
@@ -131,7 +131,7 @@ static inline void volk_64u_byteswap_generic(uint64_t* intsToSwap,
         *inputPtr++ = output1;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #if LV_HAVE_AVX2
 #include <immintrin.h>

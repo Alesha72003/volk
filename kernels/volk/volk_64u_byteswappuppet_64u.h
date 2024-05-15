@@ -15,13 +15,13 @@
 #include <string.h>
 #include <volk/volk_64u_byteswap.h>
 
-#ifdef LV_HAVE_GENERIC
-static inline void volk_64u_byteswappuppet_64u_generic(uint64_t* output,
+#ifdef LV_HAVE_E2K
+static inline void volk_64u_byteswappuppet_64u_e2k(uint64_t* output,
                                                        uint64_t* intsToSwap,
                                                        unsigned int num_points)
 {
 
-    volk_64u_byteswap_generic((uint64_t*)intsToSwap, num_points);
+    volk_64u_byteswap_e2k((uint64_t*)intsToSwap, num_points);
     memcpy((void*)output, (void*)intsToSwap, num_points * sizeof(uint64_t));
 }
 #endif

@@ -239,9 +239,9 @@ static inline void volk_32f_s32f_stddev_32f_a_avx(float* stddev,
 #endif /* LV_HAVE_AVX */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_stddev_32f_generic(float* stddev,
+static inline void volk_32f_s32f_stddev_32f_e2k(float* stddev,
                                                     const float* inputBuffer,
                                                     const float mean,
                                                     unsigned int num_points)
@@ -263,7 +263,7 @@ static inline void volk_32f_s32f_stddev_32f_generic(float* stddev,
     *stddev = returnValue;
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_s32f_stddev_32f_a_H */

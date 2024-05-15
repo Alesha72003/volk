@@ -56,9 +56,9 @@ static inline lv_32fc_t __volk_s32fc_s32f_power_s32fc_a(const lv_32fc_t exp,
     return mag * lv_cmake(-cosf(arg), sinf(arg));
 }
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_s32f_power_32fc_generic(lv_32fc_t* cVector,
+static inline void volk_32fc_s32f_power_32fc_e2k(lv_32fc_t* cVector,
                                                      const lv_32fc_t* aVector,
                                                      const float power,
                                                      unsigned int num_points)
@@ -72,7 +72,7 @@ static inline void volk_32fc_s32f_power_32fc_generic(lv_32fc_t* cVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32fc_s32f_power_32fc_a_H */

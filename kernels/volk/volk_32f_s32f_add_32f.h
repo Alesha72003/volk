@@ -58,9 +58,9 @@
 #ifndef INCLUDED_volk_32f_s32f_add_32f_u_H
 #define INCLUDED_volk_32f_s32f_add_32f_u_H
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_add_32f_generic(float* cVector,
+static inline void volk_32f_s32f_add_32f_e2k(float* cVector,
                                                  const float* aVector,
                                                  const float scalar,
                                                  unsigned int num_points)
@@ -75,7 +75,7 @@ static inline void volk_32f_s32f_add_32f_generic(float* cVector,
     }
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 #ifdef LV_HAVE_SSE
 #include <xmmintrin.h>
 
@@ -104,7 +104,7 @@ static inline void volk_32f_s32f_add_32f_u_sse(float* cVector,
     }
 
     number = quarterPoints * 4;
-    volk_32f_s32f_add_32f_generic(cPtr, aPtr, scalar, num_points - number);
+    volk_32f_s32f_add_32f_e2k(cPtr, aPtr, scalar, num_points - number);
 }
 #endif /* LV_HAVE_SSE */
 
@@ -137,7 +137,7 @@ static inline void volk_32f_s32f_add_32f_u_avx(float* cVector,
     }
 
     number = eighthPoints * 8;
-    volk_32f_s32f_add_32f_generic(cPtr, aPtr, scalar, num_points - number);
+    volk_32f_s32f_add_32f_e2k(cPtr, aPtr, scalar, num_points - number);
 }
 #endif /* LV_HAVE_AVX */
 
@@ -167,7 +167,7 @@ static inline void volk_32f_s32f_add_32f_u_neon(float* cVector,
     }
 
     number = quarterPoints * 4;
-    volk_32f_s32f_add_32f_generic(outputPtr, inputPtr, scalar, num_points - number);
+    volk_32f_s32f_add_32f_e2k(outputPtr, inputPtr, scalar, num_points - number);
 }
 #endif /* LV_HAVE_NEON */
 
@@ -206,7 +206,7 @@ static inline void volk_32f_s32f_add_32f_a_sse(float* cVector,
     }
 
     number = quarterPoints * 4;
-    volk_32f_s32f_add_32f_generic(cPtr, aPtr, scalar, num_points - number);
+    volk_32f_s32f_add_32f_e2k(cPtr, aPtr, scalar, num_points - number);
 }
 #endif /* LV_HAVE_SSE */
 
@@ -238,7 +238,7 @@ static inline void volk_32f_s32f_add_32f_a_avx(float* cVector,
     }
 
     number = eighthPoints * 8;
-    volk_32f_s32f_add_32f_generic(cPtr, aPtr, scalar, num_points - number);
+    volk_32f_s32f_add_32f_e2k(cPtr, aPtr, scalar, num_points - number);
 }
 #endif /* LV_HAVE_AVX */
 

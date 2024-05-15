@@ -152,9 +152,9 @@ static inline void volk_32fc_32f_multiply_32fc_a_sse(lv_32fc_t* cVector,
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32fc_32f_multiply_32fc_generic(lv_32fc_t* cVector,
+static inline void volk_32fc_32f_multiply_32fc_e2k(lv_32fc_t* cVector,
                                                        const lv_32fc_t* aVector,
                                                        const float* bVector,
                                                        unsigned int num_points)
@@ -168,7 +168,7 @@ static inline void volk_32fc_32f_multiply_32fc_generic(lv_32fc_t* cVector,
         *cPtr++ = (*aPtr++) * (*bPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #ifdef LV_HAVE_NEON
@@ -222,7 +222,7 @@ static inline void volk_32fc_32f_multiply_32fc_u_orc(lv_32fc_t* cVector,
     volk_32fc_32f_multiply_32fc_a_orc_impl(cVector, aVector, bVector, num_points);
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32fc_32f_multiply_32fc_a_H */

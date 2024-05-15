@@ -179,9 +179,9 @@ static inline void volk_32f_x2_add_32f_u_sse(float* cVector,
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_x2_add_32f_generic(float* cVector,
+static inline void volk_32f_x2_add_32f_e2k(float* cVector,
                                                const float* aVector,
                                                const float* bVector,
                                                unsigned int num_points)
@@ -195,7 +195,7 @@ static inline void volk_32f_x2_add_32f_generic(float* cVector,
         *cPtr++ = (*aPtr++) + (*bPtr++);
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_x2_add_32f_u_H */

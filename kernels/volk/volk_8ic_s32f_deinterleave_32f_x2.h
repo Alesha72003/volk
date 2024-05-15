@@ -309,10 +309,10 @@ static inline void volk_8ic_s32f_deinterleave_32f_x2_a_avx2(float* iBuffer,
 #endif /* LV_HAVE_AVX2 */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_8ic_s32f_deinterleave_32f_x2_generic(float* iBuffer,
+volk_8ic_s32f_deinterleave_32f_x2_e2k(float* iBuffer,
                                           float* qBuffer,
                                           const lv_8sc_t* complexVector,
                                           const float scalar,
@@ -328,7 +328,7 @@ volk_8ic_s32f_deinterleave_32f_x2_generic(float* iBuffer,
         *qBufferPtr++ = (float)(*complexVectorPtr++) * invScalar;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_8ic_s32f_deinterleave_32f_x2_a_H */

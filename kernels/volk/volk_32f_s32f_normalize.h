@@ -130,9 +130,9 @@ static inline void volk_32f_s32f_normalize_a_sse(float* vecBuffer,
 }
 #endif /* LV_HAVE_SSE */
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
-static inline void volk_32f_s32f_normalize_generic(float* vecBuffer,
+static inline void volk_32f_s32f_normalize_e2k(float* vecBuffer,
                                                    const float scalar,
                                                    unsigned int num_points)
 {
@@ -144,7 +144,7 @@ static inline void volk_32f_s32f_normalize_generic(float* vecBuffer,
         inputPtr++;
     }
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #ifdef LV_HAVE_ORC
 
@@ -159,7 +159,7 @@ static inline void volk_32f_s32f_normalize_u_orc(float* vecBuffer,
     float invscalar = 1.0 / scalar;
     volk_32f_s32f_normalize_a_orc_impl(vecBuffer, vecBuffer, invscalar, num_points);
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32f_s32f_normalize_a_H */
 

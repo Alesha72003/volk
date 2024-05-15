@@ -285,10 +285,10 @@ volk_32f_s32f_calc_spectral_noise_floor_32f_a_sse(float* noiseFloorAmplitude,
 #endif /* LV_HAVE_SSE */
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_s32f_calc_spectral_noise_floor_32f_generic(float* noiseFloorAmplitude,
+volk_32f_s32f_calc_spectral_noise_floor_32f_e2k(float* noiseFloorAmplitude,
                                                     const float* realDataPoints,
                                                     const float spectralExclusionValue,
                                                     const unsigned int num_points)
@@ -324,7 +324,7 @@ volk_32f_s32f_calc_spectral_noise_floor_32f_generic(float* noiseFloorAmplitude,
 
     *noiseFloorAmplitude = localNoiseFloorAmplitude;
 }
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 
 #endif /* INCLUDED_volk_32f_s32f_calc_spectral_noise_floor_32f_a_H */

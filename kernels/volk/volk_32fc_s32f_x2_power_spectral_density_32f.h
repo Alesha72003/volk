@@ -46,10 +46,10 @@
 #include <math.h>
 #include <stdio.h>
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32fc_s32f_x2_power_spectral_density_32f_generic(float* logPowerOutput,
+volk_32fc_s32f_x2_power_spectral_density_32f_e2k(float* logPowerOutput,
                                                      const lv_32fc_t* complexFFTInput,
                                                      const float normalizationFactor,
                                                      const float rbw,
@@ -63,6 +63,6 @@ volk_32fc_s32f_x2_power_spectral_density_32f_generic(float* logPowerOutput,
             logPowerOutput, complexFFTInput, normalizationFactor, num_points);
 }
 
-#endif /* LV_HAVE_GENERIC */
+#endif /* LV_HAVE_E2K */
 
 #endif /* INCLUDED_volk_32fc_s32f_x2_power_spectral_density_32f_a_H */

@@ -319,10 +319,10 @@ volk_32f_index_max_32u_neon(uint32_t* target, const float* src0, uint32_t num_po
 #endif /*LV_HAVE_NEON*/
 
 
-#ifdef LV_HAVE_GENERIC
+#ifdef LV_HAVE_E2K
 
 static inline void
-volk_32f_index_max_32u_generic(uint32_t* target, const float* src0, uint32_t num_points)
+volk_32f_index_max_32u_e2k(uint32_t* target, const float* src0, uint32_t num_points)
 {
     if (num_points > 0) {
         float max = src0[0];
@@ -340,7 +340,7 @@ volk_32f_index_max_32u_generic(uint32_t* target, const float* src0, uint32_t num
     }
 }
 
-#endif /*LV_HAVE_GENERIC*/
+#endif /*LV_HAVE_E2K*/
 
 
 #endif /*INCLUDED_volk_32f_index_max_32u_a_H*/
