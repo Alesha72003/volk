@@ -178,6 +178,12 @@ at the top, as a last resort.
     <alignment>64</alignment>
 </arch>
 
+<arch name="e2k">
+  <flag compiler="gnu">-funsafe-math-optimizations</flag>
+  <alignment>16</alignment>
+  <check name="e2k"></check>
+</arch>
+
 <arch name="riscv64">
 </arch>
 
